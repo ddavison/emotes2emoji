@@ -11,6 +11,8 @@ import (
 
 var pwd string
 
+var hook = "\n# turn emotes to emoji https://github.com/ddavison/emotes2emoji\nemotes2emoji \"`cat $1`\" > \"$1\""
+
 // set the path of working directory so we have a context
 func init() {
 	pwd, _ = os.Getwd()
@@ -21,7 +23,6 @@ func init() {
 func SellSelf() {
 	if IsGitRepository() {
 		// add the prepare-commit-msg hook
-		hook := "# turn emotes to emoji https://github.com/ddavison/emotes2emoji\nemotes2emoji \"`cat $1`\" > \"$1\""
 		f, err := os.OpenFile(pwd+"/.git/hooks/prepare-commit-msg", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0777)
 		defer f.Close()
 
@@ -32,14 +33,14 @@ func SellSelf() {
 
 		log.Print("added hook for ", pwd)
 	} else {
-		log.Fatal(pwd, "is not a git repository")
+		log.Fatal(pwd, " is not a git repository")
 	}
 }
 
 // Will uninstall the hook from the commit-msg hooks
 func GiveRefund() {
 	// todo
-	log.Fatal("Not implemented yet.")
+	log.Fatal("Not implemented yet. In the interim, open up ", pwd+"/.git/hooks/prepare-commit-msg and take out the emotes2emoji bit")
 }
 
 func IsGitRepository() bool {
