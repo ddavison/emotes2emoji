@@ -1,19 +1,14 @@
-Emotes2Emoji
+emotes2emoji
 ===
 
-Utility that converts your common emotes into GitHub friendly Emoji.
-
-## Example:
+## Turn your git commit excitement, into reality!
 
 ```bash
-$ e2e this is a comment :)
-this is a comment :smile:
+$ cd my-git-repostitory/
+$ emotes2emoji --install-hook
+$ git add file.txt
+$ git commit -m "adding file :)"
+[master ] adding file :smile:
 ```
 
-You are also able to add this as a git commit hook!
-
-```bash
-$ cd git-repository/
-$ e2e --install-hook
-hook installed at /.../git-respository
-```
+emotes2emoji is a command line tool that turns your emotes, such as `:)`, `:o` into GitHub-friendly emoticons.

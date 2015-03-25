@@ -23,8 +23,9 @@ func init() {
 
 	filePath := usr.HomeDir + "/.emotes2emoji/emotes.yaml"
 	if !utils.FileExists(filePath) {
+		wd, _ := os.Getwd()
 		os.Mkdir(usr.HomeDir+"/.emotes2emoji", 0777)
-		os.Rename("emotes.yaml", filePath)
+		os.Symlink(wd+"/emotes.yaml", filePath)
 	}
 
 	data, err := ioutil.ReadFile(filePath)
