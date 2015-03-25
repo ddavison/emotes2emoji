@@ -4,8 +4,11 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
+	"os/user"
 	"strings"
 
+	"github.com/ddavison/emotes2emoji/utils"
 	"gopkg.in/yaml.v2"
 )
 
@@ -16,9 +19,18 @@ type Emoji struct {
 var emotes Emoji
 
 func init() {
-	data, err := ioutil.ReadFile("emotes.yaml")
+	// If the emotes2emoji.yaml file does not exist in the home directory, put it there
+	usr, _ := user.Current()
+
+	filePath := usr.HomeDir + "/.emotes2emoji/emotes.yaml"
+	if !utils.FileExists(filePath) {
+		os.Mkdir(usr.HomeDir+"/.emotes2emoji", 0777)
+		os.Rename("emotes.yaml", filePath)
+	}
+
+	data, err := ioutil.ReadFile(filePath)
 	if err != nil {
-		panic("Couldn't find/read emotes.yaml")
+		panic("Couldn't find/read " + filePath)
 	}
 
 	emotes = Emoji{}

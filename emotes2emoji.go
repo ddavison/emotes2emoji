@@ -10,8 +10,8 @@ import (
 	"github.com/ddavison/emotes2emoji/hooker"
 )
 
-// Entry-point to the program.
 func main() {
+
 	installHook := getopt.BoolLong("install-hook", 0, "Install git commit-msg hook")
 	listEmoji := getopt.BoolLong("list", 0, "List the available emotes")
 	help := getopt.BoolLong("help", 0, "Show usage")
@@ -32,5 +32,10 @@ func main() {
 		os.Exit(0)
 	}
 
-	fmt.Println(converter.Convert(getopt.Args()[0]))
+	args := getopt.Args()
+	if len(args) >= 1 {
+		fmt.Println(converter.Convert(args[0]))
+	} else {
+		getopt.Usage()
+	}
 }
