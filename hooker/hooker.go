@@ -2,7 +2,6 @@ package hooker
 
 import (
 	"bytes"
-	"fmt"
 	"log"
 	"os"
 	"os/exec"
@@ -30,14 +29,17 @@ func SellSelf() {
 		if werr != nil || err != nil {
 			log.Fatal("Couldn't add the prepare-commit-msg hook!", werr, err)
 		}
+
+		log.Print("added hook for ", pwd)
 	} else {
-		fmt.Println(pwd, "is not a git repository")
+		log.Fatal(pwd, "is not a git repository")
 	}
 }
 
 // Will uninstall the hook from the commit-msg hooks
 func GiveRefund() {
-
+	// todo
+	log.Fatal("Not implemented yet.")
 }
 
 func IsGitRepository() bool {

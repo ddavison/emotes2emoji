@@ -1,7 +1,6 @@
 package converter
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -70,5 +69,5 @@ func GetEmojiFor(emote string) string {
 
 // ListEmotes will simply barf out the emotes that are available
 func ListEmotes() {
-	fmt.Println(emotes)
+	log.Print(emotes)
 }
