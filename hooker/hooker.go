@@ -23,7 +23,7 @@ func SellSelf() {
 	if IsGitRepository() {
 		// add the prepare-commit-msg hook
 		hook := "# turn emotes to emoji https://github.com/ddavison/emotes2emoji\nemotes2emoji \"`cat $1`\" > \"$1\""
-		f, err := os.OpenFile(pwd+"/.git/hooks/prepare-commit-msg", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0667)
+		f, err := os.OpenFile(pwd+"/.git/hooks/prepare-commit-msg", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0777)
 		defer f.Close()
 
 		_, werr := f.WriteString(hook)
