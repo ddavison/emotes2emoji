@@ -1,7 +1,30 @@
 emotes:
   ':smile:':
     - ':)'
+    - ':-)'
 
   ':open_mouth:':
     - ':O'
+    - ':-O'
     - ':o'
+    - ':-o'
+
+  ':laughing:':
+    - 'xD'
+    - 'XD'
+
+  ':stuck_out_tongue:':
+    - ':P'
+    - ':-P'
+    - ':p'
+    - ':-p'
+
+  ':kissing:':
+    - ':*'
+    - ':-*'
+
+  ':smiley:':
+    - ':D'
+    - ':-D'
+    - ':d'
+    - ':-d'
