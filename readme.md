@@ -9,7 +9,7 @@ $ git commit -m "adding file :)"
 $ git commit -m "adding another file :D :O :p"
 ```
 
-Into:
+Into these git commit messages:
 ```bash
 adding file :smile:
 adding another file :smiley: :open_mouth: :stuck_out_tongue:
