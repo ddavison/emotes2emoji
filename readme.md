@@ -3,12 +3,16 @@ emotes2emoji
 
 ## Turn your git commit excitement, into reality!
 
+Turns:
 ```bash
-$ cd my-git-repostitory/
-$ emotes2emoji --install-hook
-$ git add file.txt
 $ git commit -m "adding file :)"
-[master ] adding file :smile:
+$ git commit -m "adding another file :D :O :p"
+```
+
+Into:
+```bash
+adding file :smile:
+adding another file :smiley: :open_mouth: :stuck_out_tongue:
 ```
 
 emotes2emoji is a command line tool that turns your emotes, such as `:)`, `:o` into GitHub-friendly emoticons.
